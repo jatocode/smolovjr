@@ -1,0 +1,29 @@
+<template>
+  <require from="./smolovjr.css"></require>
+  <h1>
+    ${message}
+  </h1>
+  <label>Nuvarande 1RM:</label>
+  <input value.bind="weight" placeholder="0"/>
+
+  <div repeat.for="w of weeks">
+  <h2>Vecka ${w}</h2>
+  <table>
+    <tr>
+      <td><label>Dag 1, 6x6:</label></td>
+      <td> ${weight * 0.70 + (w-1)*easy }</td>
+    </tr>
+    <tr>
+      <td><label>Dag 2, 8x4:</label>
+      </td><td> ${weight * 0.75 + (w-1)*easy }</td>
+    </tr>
+    <tr>
+      <td><label>Dag 3, 7x5:</label>
+      </td><td> ${weight * 0.80 + (w-1)*easy }</td></tr>
+    <tr>
+      <td><label>Dag 4, 10x3:</label></td>
+      <td> ${weight * 0.85 + (w-1)*easy }</td>
+    </tr>
+  </table>
+  </div>
+</template>
