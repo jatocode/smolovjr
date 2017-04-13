@@ -1,35 +1,32 @@
 <template>
   <require from="./smolovjr.css"></require>
   <require from="bootstrap/css/bootstrap.css"></require>
+  <require from="./weightformat"></require>
+
   <div class="container">
-  <div class="jumbotron">
-  <h1>
-    ${message}
-  </h1>
-  </div>
+    <div class="jumbotron">
+      <h1>
+        ${message}
+      </h1>
+      <label>Nuvarande 1RM:</label>
+      <input value.bind="weight" placeholder="0"/>
+    </div>
+    <div class="row">
 
-  <label>Nuvarande 1RM:</label>
-  <input value.bind="weight" placeholder="0"/>
-
-  <div repeat.for="w of weeks">
-  <h2>Vecka ${w}</h2>
-  <table>
-    <tr>
-      <td><label>Dag 1, 6x6:</label></td>
-      <td> ${weight * 0.70 + (w-1)*easy }</td>
-    </tr>
-    <tr>
-      <td><label>Dag 2, 8x4:</label>
-      </td><td> ${weight * 0.75 + (w-1)*easy }</td>
-    </tr>
-    <tr>
-      <td><label>Dag 3, 7x5:</label>
-      </td><td> ${weight * 0.80 + (w-1)*easy }</td></tr>
-    <tr>
-      <td><label>Dag 4, 10x3:</label></td>
-      <td> ${weight * 0.85 + (w-1)*easy }</td>
-    </tr>
-  </table>
+    </div>
+    <div class="row col-md-6">
+      <div repeat.for="w of weeks">
+        <h2>Vecka ${w}</h2>
+        <table class="table">
+          <th repeat.for="t of titles">${t}</th>
+          <tr repeat.for="d of days">
+            <td>${d.r}</td>
+            <td>${weight * d.f + (w-1)*easy | weightFormat}</td>
+            <td>${weight * d.f + (w-1)*hard | weightFormat}</td>
+            <td><input type="checkbox" />
+          </tr>
+        </table>
+      </div>
+    </div>
   </div>
-</div>
 </template>

@@ -3,18 +3,25 @@ define('app',["require", "exports"], function (require, exports) {
     Object.defineProperty(exports, "__esModule", { value: true });
     var App = (function () {
         function App() {
-            this.message = 'Smolov Jr Aurelia';
+            this.message = 'Smolov Jr';
             this.weight = 100;
             this.easy = 2.5;
             this.hard = 5.0;
             this.weeks = ['1', '2', '3'];
+            this.titles = ['Dag', 'Lätt', 'Tung', 'Klar'];
+            this.days = [
+                { r: '6x6', f: 0.70 },
+                { r: '8x4', f: 0.75 },
+                { r: '7x5', f: 0.80 },
+                { r: '10x3', f: 0.85 },
+            ];
         }
         return App;
     }());
     exports.App = App;
 });
 
-//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7SUFBQTtRQUFBO1lBQ0UsWUFBTyxHQUFHLG1CQUFtQixDQUFDO1lBQzlCLFdBQU0sR0FBRyxHQUFHLENBQUM7WUFDYixTQUFJLEdBQUcsR0FBRyxDQUFDO1lBQ1gsU0FBSSxHQUFHLEdBQUcsQ0FBQztZQUNYLFVBQUssR0FBRyxDQUFDLEdBQUcsRUFBRSxHQUFHLEVBQUUsR0FBRyxDQUFDLENBQUM7UUFDMUIsQ0FBQztRQUFELFVBQUM7SUFBRCxDQU5BLEFBTUMsSUFBQTtJQU5ZLGtCQUFHIiwiZmlsZSI6ImFwcC5qcyIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBjbGFzcyBBcHAge1xuICBtZXNzYWdlID0gJ1Ntb2xvdiBKciBBdXJlbGlhJztcbiAgd2VpZ2h0ID0gMTAwO1xuICBlYXN5ID0gMi41O1xuICBoYXJkID0gNS4wO1xuICB3ZWVrcyA9IFsnMScsICcyJywgJzMnXTtcbn1cbiJdLCJzb3VyY2VSb290Ijoic3JjIn0=
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7SUFBQTtRQUFBO1lBQ0UsWUFBTyxHQUFHLFdBQVcsQ0FBQztZQUN0QixXQUFNLEdBQUcsR0FBRyxDQUFDO1lBQ2IsU0FBSSxHQUFHLEdBQUcsQ0FBQztZQUNYLFNBQUksR0FBRyxHQUFHLENBQUM7WUFDWCxVQUFLLEdBQUcsQ0FBRSxHQUFHLEVBQUUsR0FBRyxFQUFFLEdBQUcsQ0FBQyxDQUFDO1lBQ3pCLFdBQU0sR0FBRyxDQUFDLEtBQUssRUFBQyxNQUFNLEVBQUMsTUFBTSxFQUFDLE1BQU0sQ0FBQyxDQUFDO1lBQ3RDLFNBQUksR0FBRztnQkFDTCxFQUFDLENBQUMsRUFBQyxLQUFLLEVBQUUsQ0FBQyxFQUFDLElBQUksRUFBQztnQkFDakIsRUFBQyxDQUFDLEVBQUMsS0FBSyxFQUFFLENBQUMsRUFBQyxJQUFJLEVBQUM7Z0JBQ2pCLEVBQUMsQ0FBQyxFQUFDLEtBQUssRUFBRSxDQUFDLEVBQUMsSUFBSSxFQUFDO2dCQUNqQixFQUFDLENBQUMsRUFBQyxNQUFNLEVBQUUsQ0FBQyxFQUFDLElBQUksRUFBQzthQUNuQixDQUFBO1FBQ0gsQ0FBQztRQUFELFVBQUM7SUFBRCxDQWJBLEFBYUMsSUFBQTtJQWJZLGtCQUFHIiwiZmlsZSI6ImFwcC5qcyIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBjbGFzcyBBcHAge1xuICBtZXNzYWdlID0gJ1Ntb2xvdiBKcic7XG4gIHdlaWdodCA9IDEwMDtcbiAgZWFzeSA9IDIuNTtcbiAgaGFyZCA9IDUuMDtcbiAgd2Vla3MgPSBbICcxJywgJzInLCAnMyddO1xuICB0aXRsZXMgPSBbJ0RhZycsJ0zDpHR0JywnVHVuZycsJ0tsYXInXTtcbiAgZGF5cyA9IFtcbiAgICB7cjonNng2JywgZjowLjcwfSxcbiAgICB7cjonOHg0JywgZjowLjc1fSxcbiAgICB7cjonN3g1JywgZjowLjgwfSxcbiAgICB7cjonMTB4MycsIGY6MC44NX0sXG4gIF1cbn1cbiJdLCJzb3VyY2VSb290Ijoic3JjIn0=
 
 define('environment',["require", "exports"], function (require, exports) {
     "use strict";
@@ -57,6 +64,24 @@ define('resources/index',["require", "exports"], function (require, exports) {
 
 //# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlc291cmNlcy9pbmRleC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7SUFFQSxtQkFBMEIsTUFBOEI7SUFFeEQsQ0FBQztJQUZELDhCQUVDIiwiZmlsZSI6InJlc291cmNlcy9pbmRleC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7RnJhbWV3b3JrQ29uZmlndXJhdGlvbn0gZnJvbSAnYXVyZWxpYS1mcmFtZXdvcmsnO1xuXG5leHBvcnQgZnVuY3Rpb24gY29uZmlndXJlKGNvbmZpZzogRnJhbWV3b3JrQ29uZmlndXJhdGlvbikge1xuICAvL2NvbmZpZy5nbG9iYWxSZXNvdXJjZXMoW10pO1xufVxuIl0sInNvdXJjZVJvb3QiOiJzcmMifQ==
 
+define('weightformat',["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var WeightFormatValueConverter = (function () {
+        function WeightFormatValueConverter() {
+        }
+        WeightFormatValueConverter.prototype.toView = function (value) {
+            return Math.round(value);
+        };
+        WeightFormatValueConverter.prototype.fromView = function (value) {
+        };
+        return WeightFormatValueConverter;
+    }());
+    exports.WeightFormatValueConverter = WeightFormatValueConverter;
+});
+
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlaWdodGZvcm1hdC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7SUFBQTtRQUFBO1FBUUEsQ0FBQztRQVBDLDJDQUFNLEdBQU4sVUFBTyxLQUFLO1lBQ1YsTUFBTSxDQUFDLElBQUksQ0FBQyxLQUFLLENBQUMsS0FBSyxDQUFDLENBQUM7UUFDM0IsQ0FBQztRQUVELDZDQUFRLEdBQVIsVUFBUyxLQUFLO1FBRWQsQ0FBQztRQUNILGlDQUFDO0lBQUQsQ0FSQSxBQVFDLElBQUE7SUFSWSxnRUFBMEIiLCJmaWxlIjoid2VpZ2h0Zm9ybWF0LmpzIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNsYXNzIFdlaWdodEZvcm1hdFZhbHVlQ29udmVydGVyIHtcbiAgdG9WaWV3KHZhbHVlKSB7XG4gICAgcmV0dXJuIE1hdGgucm91bmQodmFsdWUpO1xuICB9XG5cbiAgZnJvbVZpZXcodmFsdWUpIHtcblxuICB9XG59XG4iXSwic291cmNlUm9vdCI6InNyYyJ9
+
+define('text!app.html', ['module'], function(module) { module.exports = "<template><require from=\"./smolovjr.css\"></require><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"./weightformat\"></require><div class=\"container\"><div class=\"jumbotron\"><h1>${message}</h1><label>Nuvarande 1RM:</label><input value.bind=\"weight\" placeholder=\"0\"></div><div class=\"row\"></div><div class=\"row col-md-6\"><div repeat.for=\"w of weeks\"><h2>Vecka ${w}</h2><table class=\"table\"><th repeat.for=\"t of titles\">${t}</th><tr repeat.for=\"d of days\"><td>${d.r}</td><td>${weight * d.f + (w-1)*easy | weightFormat}</td><td>${weight * d.f + (w-1)*hard | weightFormat}</td><td><input type=\"checkbox\"></td></tr></table></div></div></div></template>"; });
 define('text!smolovjr.css', ['module'], function(module) { module.exports = "h1 {\n  color: #369;\n  font-family: Arial, Helvetica, sans-serif;\n  font-size: 250%;\n}\n"; });
-define('text!app.html', ['module'], function(module) { module.exports = "<template><require from=\"./smolovjr.css\"></require><require from=\"bootstrap/css/bootstrap.css\"></require><div class=\"container\"><div class=\"jumbotron\"><h1>${message}</h1></div><label>Nuvarande 1RM:</label><input value.bind=\"weight\" placeholder=\"0\"><div repeat.for=\"w of weeks\"><h2>Vecka ${w}</h2><table><tr><td><label>Dag 1, 6x6:</label></td><td>${weight * 0.70 + (w-1)*easy }</td></tr><tr><td><label>Dag 2, 8x4:</label></td><td>${weight * 0.75 + (w-1)*easy }</td></tr><tr><td><label>Dag 3, 7x5:</label></td><td>${weight * 0.80 + (w-1)*easy }</td></tr><tr><td><label>Dag 4, 10x3:</label></td><td>${weight * 0.85 + (w-1)*easy }</td></tr></table></div></div></template>"; });
 //# sourceMappingURL=app-bundle.js.map
