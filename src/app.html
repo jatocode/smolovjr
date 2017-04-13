@@ -8,8 +8,11 @@
       <h1>
         ${message}
       </h1>
-      <label>Nuvarande 1RM:</label>
-      <input value.bind="weight" placeholder="0"/>
+      <div class="row col-sm-6">
+        <label>Nuvarande 1RM:</label>
+        <input type="number" class="vikt" value.bind="weight" placeholder="0"/>
+        <label>kg</label>
+      </div>
     </div>
     <div class="row">
 
