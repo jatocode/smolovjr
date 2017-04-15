@@ -23,9 +23,13 @@
         <table class="table">
           <th repeat.for="t of titles">${t}</th>
           <tr repeat.for="d of days">
-            <td>${d.r}</td>
-            <td>${weight * d.f + (w-1)*easy | weightFormat}</td>
-            <td>${weight * d.f + (w-1)*hard | weightFormat}</td>
+            <td>${d.s}x${d.r}</td>
+            <td>${weight * d.f + (w-1)*easy | weightFormat}
+              &nbsp;<small>(${(weight * d.f + (w-1)*easy) * d.s * d.r | weightFormat})</small>
+            </td>
+            <td>${weight * d.f + (w-1)*hard | weightFormat}
+              &nbsp;<small>(${(weight * d.f + (w-1)*hard) * d.s * d.r | weightFormat})</small>
+            </td>
             <td><input type="checkbox" />
           </tr>
         </table>

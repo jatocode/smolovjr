@@ -6,9 +6,13 @@ export class App {
   weeks = [ '1', '2', '3'];
   titles = ['Dag','Lätt','Tung','Klar'];
   days = [
-    {r:'6x6', f:0.70},
-    {r:'8x4', f:0.75},
-    {r:'7x5', f:0.80},
-    {r:'10x3', f:0.85},
+    {s:6, r:6, f:0.70},
+    {s:8, r:4, f:0.75},
+    {s:7, r:5, f:0.80},
+    {s:10, r:3, f:0.85},
   ]
+
+  getTotal(week, day, factor) {
+    return (this.weight * day.f + (week-1)*factor) * day.s * day.r;
+  }
 }
