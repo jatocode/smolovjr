@@ -10,8 +10,10 @@
   "dependencies": {
     "aurelia-animator-css": "^1.0.1",
     "aurelia-bootstrapper": "^2.1.0",
+    "aurelia-chart": "^0.2.7",
     "bluebird": "^3.4.1",
     "bootstrap": "^3.3.7",
+    "chart.js": "^2.5.0",
     "jquery": "^2.2.4",
     "requirejs": "^2.3.2",
     "text": "github:requirejs/text#latest"
@@ -50,8 +52,13 @@
     "vinyl-fs": "^2.4.3"
   },
   "jspm": {
-    "dependencies": {},
+    "dependencies": {
+      "aurelia-chart": "npm:aurelia-chart@^0.2.7"
+    },
     "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4",
       "typescript": "npm:typescript@^2.0.7"
     }
   }

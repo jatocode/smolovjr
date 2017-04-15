@@ -9,15 +9,12 @@
         ${message}
       </h1>
       <div class="row col-sm-6">
-        <label>Nuvarande 1RM:</label>
+        <label>Nuvarande 1RM: </label>
         <input type="number" class="vikt" value.bind="weight" placeholder="0"/>
         <label>kg</label>
       </div>
     </div>
-    <div class="row">
-
-    </div>
-    <div class="row col-md-6">
+    <div class="col-md-6">
       <div repeat.for="w of weeks">
         <h2>Vecka ${w}</h2>
         <table class="table">
@@ -35,5 +32,9 @@
         </table>
       </div>
     </div>
+    <div class="col-md-6">
+      <chart type="line" data.bind="weightdata" style="width: 100%; height: 100%; display: block;"></chart>
+    </div>
+
   </div>
 </template>
