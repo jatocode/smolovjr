@@ -21,8 +21,8 @@
           <th repeat.for="t of titles">${t}</th>
           <tr repeat.for="d of days">
             <td>
-              <select id="day{$index}" value.bind="d.d">
-                <option repeat.for="option of weekdayoptions" model.bind="option">${option.name}</option>
+              <select value.bind="d.wday.value" change.delegate="saveConfig()">
+                <option repeat.for="option of weekdayoptions" model.bind="option.value">${option.name}</option>
               </select>
             </td>
             <td>${d.s}x${d.r}</td>
@@ -32,7 +32,7 @@
             <td>${weight * d.f + (w-1)*hard | weightFormat}
               &nbsp;<small>(${(weight * d.f + (w-1)*hard) * d.s * d.r | weightFormat})</small>
             </td>
-            <td>
+            <td></td>
           </tr>
         </table>
       </div>

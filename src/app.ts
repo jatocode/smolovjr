@@ -8,10 +8,10 @@ export class App {
   weeks = ['1', '2', '3'];
   titles = ['Dag', 'SetxRep', 'Lätt', 'Tung', 'Anteckning'];
   days = [
-    { s: 6, r: 6, f: 0.70, d: 1 },
-    { s: 7, r: 5, f: 0.75, d: 3 },
-    { s: 8, r: 4, f: 0.80, d: 4 },
-    { s: 10, r: 3, f: 0.85, d: 6 },
+    { s: 6, r: 6, f: 0.70,  wday: {value: 1} },
+    { s: 7, r: 5, f: 0.75,  wday: {value: 2} },
+    { s: 8, r: 4, f: 0.80,  wday: {value: 4} },
+    { s: 10, r: 3, f: 0.85, wday: {value: 6} },
   ];
 
   weekdayoptions = [{ name: 'måndag', value: 1 },
@@ -29,7 +29,7 @@ export class App {
   }
 
   activate() {
-   // this.loadConfig();
+    this.loadConfig();
   }
 
   bind() {
@@ -76,7 +76,9 @@ export class App {
 
   loadConfig() {
     let config = JSON.parse(localStorage.getItem('smolovjr'));
-    this.weight = config.weight;
-    this.days = config.days;
+    if(config != null && config.weight != null && config.days != null) {
+      this.weight = config.weight;
+      this.days = config.days;
+    }
   }
 }
