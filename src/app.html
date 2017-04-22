@@ -20,6 +20,11 @@
         <table class="table">
           <th repeat.for="t of titles">${t}</th>
           <tr repeat.for="d of days">
+            <td>
+              <select id="day{$index}" value.bind="d.d">
+                <option repeat.for="option of weekdayoptions" model.bind="option">${option.name}</option>
+              </select>
+            </td>
             <td>${d.s}x${d.r}</td>
             <td>${weight * d.f + (w-1)*easy | weightFormat}
               &nbsp;<small>(${(weight * d.f + (w-1)*easy) * d.s * d.r | weightFormat})</small>
@@ -27,13 +32,13 @@
             <td>${weight * d.f + (w-1)*hard | weightFormat}
               &nbsp;<small>(${(weight * d.f + (w-1)*hard) * d.s * d.r | weightFormat})</small>
             </td>
-            <td><input type="checkbox" />
+            <td>
           </tr>
         </table>
       </div>
     </div>
     <div class="col-md-6">
-      <chart type="line" data.bind="weightdata" style="width: 100%; height: 100%; display: block;"></chart>
+<!--      <chart type="line" should-update="true" data.bind="weightdata" style="width: 100%; height: 100%; display: block;"></chart> -->
     </div>
 
   </div>
