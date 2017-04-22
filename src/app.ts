@@ -28,6 +28,10 @@ export class App {
     datasets: []
   }
 
+  activate() {
+   // this.loadConfig();
+  }
+
   bind() {
     this.createGraph();
   }
@@ -55,9 +59,24 @@ export class App {
     }
     this.weightdata.datasets = [];
     this.createGraph();
+    this.saveConfig();
   }
 
   getTotal(week, day, factor) {
     return (this.weight * day.f + (week - 1) * factor) * day.s * day.r;
+  }
+
+  saveConfig() {
+    let config = {
+      weight: this.weight,
+      days: this.days
+    }
+    localStorage.setItem('smolovjr', JSON.stringify(config));
+  }
+
+  loadConfig() {
+    let config = JSON.parse(localStorage.getItem('smolovjr'));
+    this.weight = config.weight;
+    this.days = config.days;
   }
 }
