@@ -1,6 +1,7 @@
 <template>
-  <require from="./smolovjr.css"></require>
   <require from="bootstrap/css/bootstrap.css"></require>
+  <require from="./smolovjr.css"></require>
+
   <require from="./weightformat"></require>
 
   <div class="container">
@@ -29,8 +30,9 @@
             <td>${weight * d.f + (w-1)*easy | weightFormat}
               &nbsp;<small>(${(weight * d.f + (w-1)*easy) * d.s * d.r | weightFormat})</small>
             </td>
-            <td>${weight * d.f + (w-1)*hard | weightFormat}
-              &nbsp;<small>(${(weight * d.f + (w-1)*hard) * d.s * d.r | weightFormat})</small>
+            <td><div if.bind="!$parent.$first">${weight * d.f + (w-1)*hard | weightFormat}
+              &nbsp;<small>(${(weight * d.f + (w-1)*hard) * d.s * d.r | weightFormat})</small></div>
+              <div if.bind="$parent.$first">-</div>
             </td>
             <td></td>
           </tr>

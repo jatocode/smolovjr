@@ -6,12 +6,12 @@ export class App {
   easy = 2.5;
   hard = 5.0;
   weeks = ['1', '2', '3'];
-  titles = ['Dag', 'SetxRep', 'Lätt', 'Tung', 'Anteckning'];
+  titles = ['Dag', 'Set x Rep', 'Lätt', 'Tung', 'Anteckning'];
   days = [
-    { s: 6, r: 6, f: 0.70,  wday: {value: 1} },
-    { s: 7, r: 5, f: 0.75,  wday: {value: 2} },
-    { s: 8, r: 4, f: 0.80,  wday: {value: 4} },
-    { s: 10, r: 3, f: 0.85, wday: {value: 6} },
+    { s: 6, r: 6, f: 0.70,  wday: {value: 10} },
+    { s: 7, r: 5, f: 0.75,  wday: {value: 11} },
+    { s: 8, r: 4, f: 0.80,  wday: {value: 12} },
+    { s: 10, r: 3, f: 0.85, wday: {value: 13} },
   ];
 
   weekdayoptions = [{ name: 'måndag', value: 1 },
@@ -21,6 +21,11 @@ export class App {
               { name: 'fredag', value: 5 },
               { name: 'lördag', value: 6 },
               { name: 'söndag', value: 7 },
+              { name: 'Dag 1', value: 10 },
+              { name: 'Dag 2', value: 11 },
+              { name: 'Dag 3', value: 12 },
+              { name: 'Dag 4', value: 13 },
+              
   ];
 
   weightdata = {
