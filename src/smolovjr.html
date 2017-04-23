@@ -26,11 +26,11 @@
                 <option repeat.for="option of weekdayoptions" model.bind="option.value">${option.name}</option>
               </select>
             </td>
-            <td>${d.s}x${d.r}</td>
-            <td>${weight * d.f + (w-1)*easy | weightFormat}
-              &nbsp;<small>(${(weight * d.f + (w-1)*easy) * d.s * d.r | weightFormat})</small>
+            <td><div>${d.s}x${d.r}</div></td>
+            <td><div class="lyftvikt">${weight * d.f + (w-1)*easy | weightFormat}
+              &nbsp;<small>(${(weight * d.f + (w-1)*easy) * d.s * d.r | weightFormat})</small></div>
             </td>
-            <td><div if.bind="!$parent.$first">${weight * d.f + (w-1)*hard | weightFormat}
+            <td><div class="lyftvikt" if.bind="!$parent.$first">${weight * d.f + (w-1)*hard | weightFormat}
               &nbsp;<small>(${(weight * d.f + (w-1)*hard) * d.s * d.r | weightFormat})</small></div>
               <div if.bind="$parent.$first">-</div>
             </td>
