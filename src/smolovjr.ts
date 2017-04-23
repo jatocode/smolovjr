@@ -33,11 +33,8 @@ export class Smolovjr {
     datasets: []
   }
 
-  activate() {
+  attached() {
     this.loadConfig();
-  }
-
-  bind() {
     this.createGraph();
   }
 
