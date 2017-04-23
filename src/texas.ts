@@ -2,9 +2,10 @@ import { observable } from 'aurelia-framework';
 
 export class Texas {
   message = 'Texas Method';
-  @observable weight = 100;
-  easy = 2.5;
-  hard = 5.0;
+  @observable sweight = 100;
+  @observable bweight = 100;
+  @observable dweight = 100;
+  
   weeks = ['1'];
   titles = ['Dag', 'Set x Rep', 'Övning', 'Anteckning'];
   days = [
@@ -43,31 +44,41 @@ export class Texas {
               
   ];
 
-  weightdata = {
-    labels: ["Dag 1", "Dag 2", "Dag 3", "Dag 4"],
-    datasets: []
-  }
-
   attached() {
     this.loadConfig();
   }
 
 
-  weightChanged(newValue, oldValue) {
+  sweightChanged(newValue, oldValue) {
     if (oldValue == undefined) {
       return;
     }
-    this.weightdata.datasets = [];
+    this.saveConfig();
+  }
+  
+  bweightChanged(newValue, oldValue) {
+    if (oldValue == undefined) {
+      return;
+    }
+    this.saveConfig();
+  }
+
+  dweightChanged(newValue, oldValue) {
+    if (oldValue == undefined) {
+      return;
+    }
     this.saveConfig();
   }
 
   getTotal(week, day, factor) {
-    return (this.weight * day.f + (week - 1) * factor) * day.s * day.r;
+    return (this.sweight * day.f + (week - 1) * factor) * day.s * day.r;
   }
 
   saveConfig() {
     let config = {
-      weight: this.weight,
+      sweight: this.sweight,
+      bweight: this.bweight,
+      dweight: this.dweight,
       days: this.days
     }
     localStorage.setItem('texas', JSON.stringify(config));
@@ -76,7 +87,9 @@ export class Texas {
   loadConfig() {
     let config = JSON.parse(localStorage.getItem('texas'));
     if(config != null && config.weight != null && config.days != null) {
-      this.weight = config.weight;
+      this.sweight = config.sweight;
+      this.bweight = config.bweight;
+      this.dweight = config.dweight;
       this.days = config.days;
     }
   }

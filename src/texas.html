@@ -9,9 +9,19 @@
       <h1>
         ${message}
       </h1>
-      <div class="row col-sm-6">
-        <label>Nuvarande 5RM: </label>
-        <input type="number" class="vikt" value.bind="weight" placeholder="0"/>
+      <div class="row col-sm-12">
+        <label>Nuvarande 5RM squat: </label>
+        <input type="number" class="vikt" value.bind="sweight" placeholder="0"/>
+        <label>kg</label>
+      </div>
+      <div class="row col-sm-12">
+        <label>Nuvarande 5RM bench: </label>
+        <input type="number" class="vikt" value.bind="bweight" placeholder="0"/>
+        <label>kg</label>
+      </div>
+      <div class="row col-sm-12">
+        <label>Nuvarande 5RM deadlift: </label>
+        <input type="number" class="vikt" value.bind="dweight" placeholder="0"/>
         <label>kg</label>
       </div>
     </div>
@@ -20,24 +30,26 @@
         <h2>Vecka ${w}</h2>
         <table class="table">
           <th repeat.for="t of titles">${t}</th>
-          <tr repeat.for="d of days">
-            <td>
-              <select value.bind="d.wday.value" change.delegate="saveConfig()">
-                <option repeat.for="option of weekdayoptions" model.bind="option.value">${option.name}</option>
-              </select>
-            </td>
-            <td><div>${d.s}x${d.r}</div></td>
-            <td><div>${d.ex}</div></td>
-            <td><div class="lyftvikt">${weight * d.f + (w-1)*easy | weightFormat}
-              &nbsp;<small>(${(weight * d.f + (w-1)*easy) * d.s * d.r | weightFormat})</small></div>
-            </td>
-            <td><div class="lyftvikt" if.bind="!$parent.$first">${weight * d.f + (w-1)*hard | weightFormat}
-              &nbsp;<small>(${(weight * d.f + (w-1)*hard) * d.s * d.r | weightFormat})</small></div>
-              <div if.bind="$parent.$first">-</div>
-            </td>
-            <td></td>
+          <tr>
+            <td rowspan="3">Måndag</td>
+            <td>5x5</td><td>Squat</td><td>${sweight * .90}</td>
           </tr>
-        </table>
+          <tr><td>5x5</td><td>Bench</td><td>${bweight * .90}</td></tr>
+          <tr><td>1x5</td><td>Deadlift</td><td>${dweight * .90}</td></tr>
+          <tr>
+            <td rowspan="4">Onsdag</td>
+            <td>2x5</td><td>Squat</td><td>90%</td>
+          </tr>
+          <tr><td>3x5</td><td>Bench</td><td>90%</td></tr>
+          <tr><td>1x3</td><td>Chins</td><td>90%</td></tr>        
+          <tr><td>5x10</td><td>Back extensions</td><td>90%</td></tr>        
+           <tr>
+            <td rowspan="3">Fredag</td>
+            <td>1x5</td><td>Squat</td><td>90%</td>
+          </tr>
+          <tr><td>1x5</td><td>Bench</td><td>90%</td></tr>
+          <tr><td>5x3</td><td>Power clean</td><td>90%</td></tr>  
+       </table>
       </div>
     </div>
   </div>
