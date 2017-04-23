@@ -1,0 +1,83 @@
+import { observable } from 'aurelia-framework';
+
+export class Texas {
+  message = 'Texas Method';
+  @observable weight = 100;
+  easy = 2.5;
+  hard = 5.0;
+  weeks = ['1'];
+  titles = ['Dag', 'Set x Rep', 'Övning', 'Anteckning'];
+  days = [
+    { excs: [
+      {s: 5, r: 5, f: 0.90, ex: 'Squat'},
+      {s: 5, r: 5, f: 0.90, ex: 'Bench/OH'},
+      {s: 5, r: 5, f: 0.90, ex: 'Deadlift'}
+      ], wday: {value: 1} 
+    },
+    { excs: [
+      {s: 5, r: 5, f: 0.90, ex: 'Squat'},
+      {s: 5, r: 5, f: 0.90, ex: 'Bench/OH'},
+      {s: 1, r: 3, f: 0.00, ex: 'Chin up'},
+      {s: 5, r: 5, f: 0.90, ex: 'Back extension'}
+      ], wday: {value: 3} 
+    },
+    { excs: [
+      {s: 5, r: 5, f: 0.90, ex: 'Squat'},
+      {s: 5, r: 5, f: 0.90, ex: 'Bench/OH'},
+      {s: 5, r: 5, f: 0.90, ex: 'Deadlift'}
+      ], wday: {value: 5} 
+    },
+  ];
+
+  weekdayoptions = [{ name: 'måndag', value: 1 },
+              { name: 'tisdag', value: 2 },
+              { name: 'onsdag', value: 3 },
+              { name: 'torsdag', value: 4 },
+              { name: 'fredag', value: 5 },
+              { name: 'lördag', value: 6 },
+              { name: 'söndag', value: 7 },
+              { name: 'Dag 1', value: 10 },
+              { name: 'Dag 2', value: 11 },
+              { name: 'Dag 3', value: 12 },
+              { name: 'Dag 4', value: 13 },
+              
+  ];
+
+  weightdata = {
+    labels: ["Dag 1", "Dag 2", "Dag 3", "Dag 4"],
+    datasets: []
+  }
+
+  attached() {
+    this.loadConfig();
+  }
+
+
+  weightChanged(newValue, oldValue) {
+    if (oldValue == undefined) {
+      return;
+    }
+    this.weightdata.datasets = [];
+    this.saveConfig();
+  }
+
+  getTotal(week, day, factor) {
+    return (this.weight * day.f + (week - 1) * factor) * day.s * day.r;
+  }
+
+  saveConfig() {
+    let config = {
+      weight: this.weight,
+      days: this.days
+    }
+    localStorage.setItem('texas', JSON.stringify(config));
+  }
+
+  loadConfig() {
+    let config = JSON.parse(localStorage.getItem('texas'));
+    if(config != null && config.weight != null && config.days != null) {
+      this.weight = config.weight;
+      this.days = config.days;
+    }
+  }
+}
