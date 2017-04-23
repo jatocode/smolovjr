@@ -86,7 +86,7 @@ export class Texas {
 
   loadConfig() {
     let config = JSON.parse(localStorage.getItem('texas'));
-    if(config != null && config.weight != null && config.days != null) {
+    if(config != null && config.days != null) {
       this.sweight = config.sweight;
       this.bweight = config.bweight;
       this.dweight = config.dweight;
