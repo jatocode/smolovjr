@@ -34,6 +34,7 @@
               &nbsp;<small>(${(weight * d.f + (w-1)*hard) * d.s * d.r | weightFormat})</small></div>
               <div if.bind="$parent.$first">-</div>
             </td>
+            <td><input type="checkbox" model.bind="$parent.$index*10 + $index" checked.bind="done" change.delegate="saveConfig()"></td>
             <td></td>
           </tr>
         </table>

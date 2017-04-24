@@ -6,13 +6,15 @@ export class Smolovjr {
   easy = 2.5;
   hard = 5.0;
   weeks = ['1', '2', '3'];
-  titles = ['Dag', 'Set x Rep', 'Lätt', 'Tung', 'Anteckning'];
+  titles = ['Dag', 'Set x Rep', 'Lätt', 'Tung', 'Klar', 'Anteckning'];
   days = [
     { s: 6, r: 6, f: 0.70,  wday: {value: 10} },
     { s: 7, r: 5, f: 0.75,  wday: {value: 11} },
     { s: 8, r: 4, f: 0.80,  wday: {value: 12} },
     { s: 10, r: 3, f: 0.85, wday: {value: 13} },
   ];
+
+  done = [];
 
   weekdayoptions = [{ name: 'måndag', value: 1 },
               { name: 'tisdag', value: 2 },
@@ -33,7 +35,8 @@ export class Smolovjr {
     datasets: []
   }
 
-  attached() {
+  attached() { 
+
     this.loadConfig();
     this.createGraph();
   }
@@ -71,16 +74,19 @@ export class Smolovjr {
   saveConfig() {
     let config = {
       weight: this.weight,
-      days: this.days
+      days: this.days,
+      done: this.done
     }
+    console.log(this.done);
     localStorage.setItem('smolovjr', JSON.stringify(config));
   }
 
   loadConfig() {
     let config = JSON.parse(localStorage.getItem('smolovjr'));
-    if(config != null && config.weight != null && config.days != null) {
+    if(config != null && config.weight != null && config.done != null && config.days != null) {
       this.weight = config.weight;
       this.days = config.days;
+      this.done = config.done;
     }
   }
 }
