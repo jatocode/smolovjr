@@ -1,8 +1,14 @@
-import { observable } from 'aurelia-framework';
+import { bindable, inject } from 'aurelia-framework';
+import { EventAggregator } from 'aurelia-event-aggregator';
 
+@inject(EventAggregator)
 export class Smolovjr {
   message = 'Smolov Jr';
-  @observable weight = 100;
+  public ea: EventAggregator;
+  public subscriber;
+
+  @bindable weight = 100;
+
   easy = 2.5;
   hard = 5.0;
   weeks = ['1', '2', '3'];
@@ -35,8 +41,14 @@ export class Smolovjr {
     datasets: []
   }
 
-  attached() { 
+  constructor(EventAggregator) {
+    this.ea = EventAggregator;
+    this.subscriber = this.ea.subscribe('weights', response => {
+      this.weight = response.bweight;
+    });
+  }
 
+  attached() { 
     this.loadConfig();
     this.createGraph();
   }
@@ -73,18 +85,15 @@ export class Smolovjr {
 
   saveConfig() {
     let config = {
-      weight: this.weight,
       days: this.days,
       done: this.done
     }
-    console.log(this.done);
     localStorage.setItem('smolovjr', JSON.stringify(config));
   }
 
   loadConfig() {
     let config = JSON.parse(localStorage.getItem('smolovjr'));
-    if(config != null && config.weight != null && config.done != null && config.days != null) {
-      this.weight = config.weight;
+    if(config != null && config.done != null && config.days != null) {
       this.days = config.days;
       this.done = config.done;
     }
