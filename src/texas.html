@@ -1,55 +1,69 @@
 <template>
-  <require from="bootstrap/css/bootstrap.css"></require>
-  <require from="./smolovjr.css"></require>
-
   <require from="./resources/value-converters/weightformat"></require>
 
   <div class="container">
-    <div class="jumbotron">
-      <h1>
-        ${message}
-      </h1>
-      <div class="row col-sm-12">
-        <label>Nuvarande 5RM squat: </label>
-        <input type="number" class="vikt" value.bind="sweight" placeholder="0"/>
-        <label>kg</label>
-      </div>
-      <div class="row col-sm-12">
-        <label>Nuvarande 5RM bench: </label>
-        <input type="number" class="vikt" value.bind="bweight" placeholder="0"/>
-        <label>kg</label>
-      </div>
-      <div class="row col-sm-12">
-        <label>Nuvarande 5RM deadlift: </label>
-        <input type="number" class="vikt" value.bind="dweight" placeholder="0"/>
-        <label>kg</label>
-      </div>
-    </div>
+    <h1>
+      ${message}
+    </h1>
     <div class="col-md-6">
       <div repeat.for="w of weeks">
-        <h2>Vecka ${w}</h2>
+        <h3>Vecka ${w}</h3>
         <table class="table">
           <th repeat.for="t of titles">${t}</th>
           <tr>
             <td rowspan="3">Måndag</td>
-            <td>5x5</td><td>Squat</td><td>${sweight * .90}</td>
+            <td>5x5</td>
+            <td>Squat</td>
+            <td>${sweight * .90 | weightFormat}</td>
           </tr>
-          <tr><td>5x5</td><td>Bench</td><td>${bweight * .90}</td></tr>
-          <tr><td>1x5</td><td>Deadlift</td><td>${dweight * .90}</td></tr>
+          <tr>
+            <td>5x5</td>
+            <td>Bench</td>
+            <td>${bweight * .90 | weightFormat}</td>
+          </tr>
+          <tr>
+            <td>1x5</td>
+            <td>Deadlift</td>
+            <td>${dweight * .90 | weightFormat}</td>
+          </tr>
           <tr>
             <td rowspan="4">Onsdag</td>
-            <td>2x5</td><td>Squat</td><td>${sweight * .90 * .80}</td>
+            <td>2x5</td>
+            <td>Squat</td>
+            <td>${sweight * .90 * .80 | weightFormat}</td>
           </tr>
-          <tr><td>3x5</td><td>Bench</td><td>${bweight * .90 * .90}</td></tr>
-          <tr><td>1x3</td><td>Chins</td><td>Kroppsvikt</td></tr>        
-          <tr><td>5x10</td><td>Back extensions</td><td>-</td></tr>        
-           <tr>
+          <tr>
+            <td>3x5</td>
+            <td>Bench</td>
+            <td>${bweight * .90 * .90 | weightFormat}</td>
+          </tr>
+          <tr>
+            <td>1x3</td>
+            <td>Chins</td>
+            <td>Kroppsvikt</td>
+          </tr>
+          <tr>
+            <td>5x10</td>
+            <td>Back extensions</td>
+            <td>-</td>
+          </tr>
+          <tr>
             <td rowspan="3">Fredag</td>
-            <td>1x5</td><td>Squat</td><td>Nytt 5RM</td>
+            <td>1x5</td>
+            <td>Squat</td>
+            <td>Nytt 5RM</td>
           </tr>
-          <tr><td>1x5</td><td>Bench</td><td>Nytt 5RM</td></tr>
-          <tr><td>5x3</td><td>Power clean</td><td>Nytt 5RM</td></tr>  
-       </table>
+          <tr>
+            <td>1x5</td>
+            <td>Bench</td>
+            <td>Nytt 5RM</td>
+          </tr>
+          <tr>
+            <td>5x3</td>
+            <td>Power clean</td>
+            <td>Nytt 5RM</td>
+          </tr>
+        </table>
       </div>
     </div>
   </div>
