@@ -10,14 +10,14 @@
         ${message}
       </h1>
       <div class="row col-sm-6">
-        <label>Nuvarande 1RM: </label>
+        <label>Current 1RM: </label>
         <input type="number" class="vikt" value.bind="weight" placeholder="0"/>
         <label>kg</label>
       </div>
     </div>
     <div class="col-md-6">
       <div repeat.for="w of weeks">
-        <h2>Vecka ${w}</h2>
+        <h2>Week ${w}</h2>
         <table class="table">
           <th repeat.for="t of titles">${t}</th>
           <tr repeat.for="d of days">

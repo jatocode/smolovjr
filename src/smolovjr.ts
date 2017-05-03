@@ -6,7 +6,7 @@ export class Smolovjr {
   easy = 2.5;
   hard = 5.0;
   weeks = ['1', '2', '3'];
-  titles = ['Dag', 'Set x Rep', 'Lätt', 'Tung', 'Anteckning'];
+  titles = ['Day', 'Set x Rep', 'Easy', 'Hard', 'Note'];
   days = [
     { s: 6, r: 6, f: 0.70,  wday: {value: 10} },
     { s: 7, r: 5, f: 0.75,  wday: {value: 11} },
@@ -14,22 +14,22 @@ export class Smolovjr {
     { s: 10, r: 3, f: 0.85, wday: {value: 13} },
   ];
 
-  weekdayoptions = [{ name: 'måndag', value: 1 },
-              { name: 'tisdag', value: 2 },
-              { name: 'onsdag', value: 3 },
-              { name: 'torsdag', value: 4 },
-              { name: 'fredag', value: 5 },
-              { name: 'lördag', value: 6 },
-              { name: 'söndag', value: 7 },
-              { name: 'Dag 1', value: 10 },
-              { name: 'Dag 2', value: 11 },
-              { name: 'Dag 3', value: 12 },
-              { name: 'Dag 4', value: 13 },
+  weekdayoptions = [{ name: 'monday', value: 1 },
+              { name: 'tuesday', value: 2 },
+              { name: 'wednesday', value: 3 },
+              { name: 'thursday', value: 4 },
+              { name: 'friday', value: 5 },
+              { name: 'saturday', value: 6 },
+              { name: 'sunday', value: 7 },
+              { name: 'Day 1', value: 10 },
+              { name: 'Day 2', value: 11 },
+              { name: 'Day 3', value: 12 },
+              { name: 'Day 4', value: 13 },
               
   ];
 
   weightdata = {
-    labels: ["Dag 1", "Dag 2", "Dag 3", "Dag 4"],
+    labels: ["Day 1", "Day 2", "Day 3", "Day 4"],
     datasets: []
   }
 
