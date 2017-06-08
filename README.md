@@ -3,4 +3,4 @@ SmolovJr Calculator
 
 Separate repmax
 
-Started with Mad Dog
+Started with MadCow
