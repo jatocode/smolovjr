@@ -1,5 +1,6 @@
 # smolovjr
 SmolovJr Calculator
 
-Separate head
+Separate repmax
+
 Started with Mad Dog
